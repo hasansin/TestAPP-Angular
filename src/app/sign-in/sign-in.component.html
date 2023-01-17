@@ -3,16 +3,26 @@
 <div class="card-body">
 <h5 class="card-title">Sign-in Form</h5>
 
- <form action=""> 
+ <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" action=""> 
 <div class="mb-3">
-  <label for="username" class="form-label">Username</label>
+  <label for="user" class="form-label">Username</label>
   <input type="text"
-    class="form-control" name="username" id="" aria-describedby="helpId" placeholder="">
-</div>
+    class="form-control" formCoontrolName="username" name="user" aria-describedby="helpId"  >
+    <div *ngIf="username.invalid && (username.dirty || username.touched)">
+      <div *ngIf="username.errors.required" class="invalid-feedback" translate>
+        Username is required.
+      </div>
+       <div *ngIf="username.errors.maxlength" class="invalid-feedback" translate>
+        Maximum character length is 10
+      </div>
+    </div>
+  </div>
 <div class="mb-3">
-  <label for="password" class="form-label">Password</label>
-  <input type="password" class="form-control" name="password" id="" placeholder="">
+  <label for="pwd" class="form-label">Password</label>
+  <input type="password" formCoontrolName="password" class="form-control" name="pwd" >
 </div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
 </form>  
 </div>
 </div>

@@ -7,17 +7,20 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { NavigatorComponent } from './navigator/navigator.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
     SignInComponent,
+    ServerComponent,
     NavigatorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [],
