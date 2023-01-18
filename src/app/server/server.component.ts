@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent {
+   serverName = 'NewServer';
+   username = ''
 
+   update(event :Event){
+    this.username =(<HTMLInputElement>event.target).value
+   }
 }
